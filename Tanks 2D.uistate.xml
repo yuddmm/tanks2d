@@ -10,20 +10,35 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="1">Layout 1</layout>
-        <event-sheet order="2">Event sheet 1</event-sheet>
+        <layout order="0">Poligon</layout>
+        <event-sheet active="1" order="1">Poligon</event-sheet>
     </open-tabs>
     <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
         <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/tanks_models/" />
+        <folder expanded="1" path="object-folder/tanks_models/ussr/" />
+        <folder expanded="1" path="object-folder/tanks_models/germany/" />
+        <folder expanded="1" path="object-folder/tanks_models/usa/" />
+        <folder expanded="1" path="object-folder/tanks_models/test_tanks/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/test_tanks_tank_body/" />
+        <folder expanded="1" path="animation-folder/test_tanks_tank_tower/" />
+        <folder expanded="1" path="animation-folder/Armor/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
     </folders-expanded>
 </c2uistate>

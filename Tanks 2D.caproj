@@ -9,8 +9,21 @@
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>303z4f7fk5l7m</unique-id>
     <saved-with-version>27500</saved-with-version>
-    <used-plugins />
-    <used-behaviors />
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Car" version="1">Car</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -37,15 +50,163 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder />
+    <object-folder>
+        <object-folder name="tanks_models">
+            <object-folder name="ussr" />
+            <object-folder name="germany" />
+            <object-folder name="usa" />
+            <object-folder name="test_tanks">
+                <object-type name="test_tanks_tank_body" sid="883615977942386">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Car" sid="158706168380522">
+                            <behavior id="Car" />
+                        </behavior-type>
+                        <behavior-type name="ScrollTo" sid="213233203029511">
+                            <behavior id="scrollto" />
+                        </behavior-type>
+                        <behavior-type name="ShadowCaster" sid="532748538293625">
+                            <behavior id="shadowcaster" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="105610917341225" speed="5">
+                            <frame duration="1" hotspotX="0.501149" hotspotY="0.5" original-source="C:\Users\Dmitry\Downloads\tank-sheet0.png">
+                                <image-point name="towerpoint" x="0.606897" y="0.5" />
+                                <image-point name="Side" x="0.501149" y="0.5" />
+                                <image-point name="Front" x="0.898851" y="0.5" />
+                                <image-point name="Back" x="0.0436782" y="0.504464" />
+                                <collision-poly>
+                                    <point x="0.0275862" y="0.0535714" />
+                                    <point x="0.963218" y="0.0714286" />
+                                    <point x="0.958621" y="0.919643" />
+                                    <point x="0.0321839" y="0.9375" />
+                                    <point x="0.00689655" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="test_tanks_tank_tower" sid="290442197621551">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="831953764232270">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="246838614620549" speed="5">
+                            <frame duration="1" hotspotX="0.230326" hotspotY="0.515924" original-source="C:\Users\Dmitry\Downloads\bashnya-sheet0.png">
+                                <image-point name="Imagepoint 1" x="1" y="0.503185" />
+                                <collision-poly>
+                                    <point x="0.049904" y="0.165605" />
+                                    <point x="0.49904" y="0.458599" />
+                                    <point x="0.863724" y="0.452229" />
+                                    <point x="0.998081" y="0.496815" />
+                                    <point x="0.856046" y="0.522293" />
+                                    <point x="0.49904" y="0.541401" />
+                                    <point x="0.0441459" y="0.853503" />
+                                    <point x="0.00575816" y="0.496815" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Armor" sid="104822499375462">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="ArmorMM" sid="154480630287571" type="number" />
+                        <instance-variable name="HP" sid="885711422849146" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="697557845844514" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+        </object-folder>
+        <object-type name="gui_log" sid="922965225848102">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="293152516287508">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Mouse" sid="204583784723838">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="564977030954685">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Sprite" sid="847112088464503">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="685663673552838" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="874648181025148">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="588622282425005">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="489494413572803" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="265321375682110">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="104736346790949" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="328314695871234">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite4" sid="205408666013353">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="damage" sid="800293778771162" type="number" />
+                <instance-variable name="steelmm" sid="667913269402901" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="481496221651526">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="959464540913366" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Poligon.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Poligon.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Mouse" uid="3" />
+        <global-instance type="Keyboard" uid="4" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

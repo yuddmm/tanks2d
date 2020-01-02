@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Poligon</name>
+    <events>
+        <variable constant="0" name="KD" sid="810514764980137" static="0" type="number">7</variable>
+        <variable constant="0" name="isShoot" sid="592395475442483" static="0" type="number">1</variable>
+        <variable constant="0" name="zoom" sid="773650358706172" static="0" type="number">1</variable>
+        <event-block sid="809357218670377">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="412778995183617" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="562285105278887" type="test_tanks_tank_tower">
+                    <param id="0" name="Object">test_tanks_tank_body</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="136038726394955" type="test_tanks_tank_tower">
+                    <param id="0" name="Pin to">test_tanks_tank_body</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="401607993237705">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="203187013287854" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Rotate toward position" sid="412838089548710" type="test_tanks_tank_tower">
+                    <param id="0" name="Degrees">0.7</param>
+                    <param id="1" name="X">Mouse.X</param>
+                    <param id="2" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="591399373286231" type="gui_log">
+                    <param id="0" name="Text">&quot;Speed: &quot; &amp; round(test_tanks_tank_body.Car.Speed / 10) &amp; &quot; Km/H&quot; &amp; newline &amp; &quot;Перезарядка: &quot; &amp; round(KD) &amp; &quot; sec.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="405228009824837">
+            <conditions>
+                <condition id="8" name="On mouse wheel" sid="716750780874417" type="Mouse">
+                    <param id="0" name="Direction">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-20" name="Set layout scale" sid="152778723446804" type="System">
+                    <param id="0" name="Scale">zoom - 0.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="970266027312616">
+            <conditions>
+                <condition id="8" name="On mouse wheel" sid="757916277423002" type="Mouse">
+                    <param id="0" name="Direction">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-20" name="Set layout scale" sid="558468136434254" type="System">
+                    <param id="0" name="Scale">zoom</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109979003065621">
+            <conditions>
+                <condition id="0" name="On click" sid="188363653270256" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="689730817945324" type="System">
+                    <param id="0" name="Variable">isShoot</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="429318711632516" type="test_tanks_tank_tower">
+                    <param id="0" name="Object">Sprite4</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="375023937780922" type="System">
+                    <param id="0" name="Variable">isShoot</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="805086013201968" type="System">
+                    <param id="0" name="Variable">KD</param>
+                    <param id="1" name="Value">7</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="528201258217065">
+            <conditions>
+                <condition id="2" name="Key is down" sid="810663327599054" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="7" name="Simulate control" sid="505310704816491" type="test_tanks_tank_body">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="192018951765934">
+            <conditions>
+                <condition id="2" name="Key is down" sid="962168108241430" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="7" name="Simulate control" sid="501074471719180" type="test_tanks_tank_body">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="602176287493216">
+            <conditions>
+                <condition id="2" name="Key is down" sid="697497067474952" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="7" name="Simulate control" sid="496047532199278" type="test_tanks_tank_body">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="769319612490833">
+            <conditions>
+                <condition id="2" name="Key is down" sid="288205237654389" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="7" name="Simulate control" sid="162125525047019" type="test_tanks_tank_body">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="229365125386712">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="189542002856737" type="Sprite4">
+                    <param id="0" name="Object">Armor</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="265459332033168" type="Sprite4">
+                    <param id="0" name="Instance variable">steelmm</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">Armor.ArmorMM</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="147701210677229" type="Sprite4" />
+                <action id="-11" name="Add to" sid="274017071309603" type="Armor">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Value">-Sprite4.damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="315697277924846">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="248047083989704" type="Armor">
+                    <param id="0" name="Instance variable">HP</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="400691804859084" type="Armor" />
+            </actions>
+        </event-block>
+        <event-block sid="635038163236573">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="897811268016644" type="Sprite4">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Set speed" sid="761826228051844" type="Sprite3">
+                    <param id="0" name="Speed">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="852006412997727">
+            <conditions>
+                <condition id="4" name="On finished" sid="366616343972047" type="Sprite3">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="671514273289074" type="Sprite3" />
+            </actions>
+        </event-block>
+        <event-block sid="601933294307890">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="780738401913971" type="Sprite4">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="261439398190590" type="Sprite4" />
+            </actions>
+        </event-block>
+        <event-block sid="235556652002180">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="558269107555057" type="System">
+                    <param id="0" name="Variable">KD</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="423778729808714" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="527182367210656" type="System">
+                    <param id="0" name="Variable">KD</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="151423817289533">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="157588916334223" type="System">
+                    <param id="0" name="Variable">KD</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="518339400422420" type="System">
+                    <param id="0" name="Variable">isShoot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
